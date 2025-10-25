@@ -49,17 +49,23 @@ All colors MUST be HSL.
     --radius: 1rem;
 
     /* Status color themes */
-    --healthy-bg: 120 45% 95%;
+    --healthy-bg: 120 45% 96%;
+    --healthy-bg-light: 120 40% 98%;
     --healthy-accent: 120 60% 45%;
     --healthy-glow: 120 50% 70%;
+    --healthy-text: 120 50% 25%;
 
-    --mild-bg: 45 60% 95%;
-    --mild-accent: 45 90% 50%;
+    --mild-bg: 45 85% 85%;
+    --mild-bg-light: 45 80% 92%;
+    --mild-accent: 45 90% 45%;
     --mild-glow: 45 85% 65%;
+    --mild-text: 45 70% 20%;
 
-    --severe-bg: 0 50% 95%;
-    --severe-accent: 0 70% 50%;
+    --severe-bg: 0 75% 88%;
+    --severe-bg-light: 0 70% 94%;
+    --severe-accent: 0 70% 45%;
     --severe-glow: 0 60% 70%;
+    --severe-text: 0 60% 20%;
 
     /* Gradients */
     --gradient-healthy: linear-gradient(135deg, hsl(120 60% 45%), hsl(120 50% 60%));

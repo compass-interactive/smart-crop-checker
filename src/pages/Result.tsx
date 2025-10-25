@@ -64,23 +64,29 @@ const Result = () => {
   // Theme based on severity
   const themeClasses = {
     healthy: {
-      bg: "bg-gradient-to-b from-[hsl(var(--healthy-bg))] to-background",
+      bg: "bg-[hsl(var(--healthy-bg))]",
+      headerBg: "bg-[hsl(var(--healthy-bg-light))]",
       accent: "text-[hsl(var(--healthy-accent))]",
-      cardBg: "bg-[hsl(var(--healthy-bg))]",
+      cardBg: "bg-[hsl(var(--healthy-bg-light))]",
+      textColor: "text-[hsl(var(--healthy-text))]",
       icon: CheckCircle,
       glow: "shadow-[var(--shadow-glow-healthy)]",
     },
     mild: {
-      bg: "bg-gradient-to-b from-[hsl(var(--mild-bg))] to-background",
+      bg: "bg-[hsl(var(--mild-bg))]",
+      headerBg: "bg-[hsl(var(--mild-bg-light))]",
       accent: "text-[hsl(var(--mild-accent))]",
-      cardBg: "bg-[hsl(var(--mild-bg))]",
+      cardBg: "bg-[hsl(var(--mild-bg-light))]",
+      textColor: "text-[hsl(var(--mild-text))]",
       icon: AlertTriangle,
       glow: "shadow-[var(--shadow-glow-mild)]",
     },
     severe: {
-      bg: "bg-gradient-to-b from-[hsl(var(--severe-bg))] to-background",
+      bg: "bg-[hsl(var(--severe-bg))]",
+      headerBg: "bg-[hsl(var(--severe-bg-light))]",
       accent: "text-[hsl(var(--severe-accent))]",
-      cardBg: "bg-[hsl(var(--severe-bg))]",
+      cardBg: "bg-[hsl(var(--severe-bg-light))]",
+      textColor: "text-[hsl(var(--severe-text))]",
       icon: AlertCircle,
       glow: "shadow-[var(--shadow-glow-severe)]",
     },
@@ -92,16 +98,16 @@ const Result = () => {
   return (
     <div className={`min-h-screen ${theme.bg} theme-transition`}>
       {/* Header */}
-      <header className="p-4 flex items-center gap-4">
+      <header className={`p-4 flex items-center gap-4 ${theme.headerBg}`}>
         <Button
           variant="ghost"
           size="icon"
           onClick={() => navigate("/")}
-          className="rounded-full"
+          className={`rounded-full ${theme.textColor}`}
         >
           <ArrowLeft className="w-6 h-6" />
         </Button>
-        <h1 className="text-xl font-bold">Analysis Result</h1>
+        <h1 className={`text-xl font-bold ${theme.textColor}`}>Analysis Result</h1>
       </header>
 
       {/* Main Content */}
@@ -125,28 +131,28 @@ const Result = () => {
               <h2 className={`text-2xl font-bold ${theme.accent} mb-1`}>
                 {result.disease}
               </h2>
-              <p className="text-sm text-muted-foreground uppercase tracking-wide">
+              <p className={`text-sm uppercase tracking-wide ${theme.textColor}`}>
                 {result.severity === "healthy" ? "Healthy Crop" : `${result.severity} Infection`}
               </p>
             </div>
           </div>
 
-          <p className="text-base leading-relaxed text-foreground">
+          <p className={`text-base leading-relaxed ${theme.textColor}`}>
             {result.description}
           </p>
         </Card>
 
         {/* Treatment Card */}
         {result.cure.length > 0 && (
-          <Card className="p-6 space-y-4">
+          <Card className={`p-6 space-y-4 ${theme.cardBg} border-none`}>
             <div className="flex items-center justify-between">
-              <h3 className="text-xl font-bold">Treatment Steps</h3>
+              <h3 className={`text-xl font-bold ${theme.textColor}`}>Treatment Steps</h3>
               <Button
                 variant="outline"
                 size="icon"
                 onClick={speakText}
                 disabled={isSpeaking}
-                className="rounded-full"
+                className={`rounded-full ${theme.textColor}`}
               >
                 <Volume2 className={`w-5 h-5 ${isSpeaking ? 'animate-pulse' : ''}`} />
               </Button>
@@ -155,10 +161,10 @@ const Result = () => {
             <ul className="space-y-3">
               {result.cure.map((step, index) => (
                 <li key={index} className="flex gap-3">
-                  <span className={`flex-shrink-0 w-6 h-6 rounded-full ${theme.cardBg} ${theme.accent} flex items-center justify-center text-sm font-semibold`}>
+                  <span className={`flex-shrink-0 w-6 h-6 rounded-full bg-white ${theme.accent} flex items-center justify-center text-sm font-semibold`}>
                     {index + 1}
                   </span>
-                  <span className="text-base leading-relaxed">{step}</span>
+                  <span className={`text-base leading-relaxed ${theme.textColor}`}>{step}</span>
                 </li>
               ))}
             </ul>
