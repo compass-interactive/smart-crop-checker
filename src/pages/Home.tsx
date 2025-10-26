@@ -9,14 +9,14 @@ const Home = () => {
 
   const content = {
     en: {
-      title: "AgriScan",
+      title: "WheatSure",
       subtitle: "AI-Powered Crop Disease Detection",
       scan: "Scan Crop",
       history: "My Crop Health",
       description: "Take a photo of your wheat crop to instantly detect diseases and get treatment recommendations",
     },
     hi: {
-      title: "एग्रीस्कैन",
+      title: "वीटशोर",
       subtitle: "एआई से फसल रोग पहचान",
       scan: "फसल स्कैन करें",
       history: "मेरी फसल स्वास्थ्य",
@@ -31,7 +31,7 @@ const Home = () => {
       {/* Header */}
       <header className="p-4 flex justify-between items-center">
         <div className="flex items-center gap-2">
-          <Leaf className="w-8 h-8 text-[hsl(var(--healthy-accent))]" />
+          <img src="/logo.png" alt="WheatSure logo" className="w-8 h-8" />
           <h1 className="text-xl font-bold text-foreground">{t.title}</h1>
         </div>
         <Button
@@ -48,7 +48,7 @@ const Home = () => {
       <main className="flex-1 flex flex-col items-center justify-center px-6 pb-20">
         <div className="text-center space-y-6 max-w-md animate-slide-up">
           <div className="w-32 h-32 mx-auto bg-gradient-to-br from-[hsl(var(--healthy-accent))] to-[hsl(var(--healthy-glow))] rounded-3xl flex items-center justify-center shadow-[var(--shadow-elevated)] animate-pulse-glow">
-            <Leaf className="w-16 h-16 text-white" />
+            <img src="/logo.png" alt="WheatSure logo" className="w-16 h-16 text-white" />
           </div>
 
           <div className="space-y-2">

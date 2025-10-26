@@ -1,13 +1,13 @@
 {
-  "name": "AgriScan",
-  "short_name": "AgriScan",
+  "name": "WheatSure",
+  "short_name": "WheatSure",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#4ade80",
   "icons": [
     {
-      "src": "/icon.png",
+      "src": "/logo.png",
       "sizes": "512x512",
       "type": "image/png"
     }
